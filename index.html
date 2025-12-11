@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>BBC Bangla</title>
 
     <!-- DaisyUI CDN -->
     <link
@@ -21,8 +21,141 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <link rel="shortcut icon" href="./assets/logo.svg" type="image/x-icon" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        font-family: "Noto Serif Bengali", serif;
+      }
+    </style>
   </head>
   <body>
+    <header class="bg-red-700 py-5">
+      <div class="max-w-7xl mx-auto px-5">
+        <img class="w-[300px] invert" src="./assets/logo.svg" alt="" />
+      </div>
+    </header>
+    <!-- Category container -->
+    <nav class="shadow-sm">
+      <ul
+        id="categoryContainer"
+        class="flex items-center gap-8 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [::-webkit-scrollbar]{display:none} max-w-7xl mx-auto px-3"
+      ></ul>
+    </nav>
+    <!-- main -->
+    <main class="mt-[50px] px-5 max-w-7xl mx-auto">
+      <div id="categoryName" class="mb-7 text-3xl font-bold max-w-7xl mx-auto">
+        মূলপাতা
+      </div>
+      <div class="grid grid-cols-12 gap-8">
+        <!-- card container -->
+        <div
+          id="cardContainer"
+          class="col-span-12 md:col-span-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          <span
+            class="loading loading-bars loading-xl max-w-7xl mx-auto"
+          ></span>
+        </div>
+        <!-- history container -->
+        <div class="col-span-12 md:col-span-4 min-h-[400px]">
+          <div
+            class="bg-red-700 py-7 text-white px-10 text-2xl flex justify-between items-center"
+          >
+            <p>Bookmarks</p>
+            <button class="bg-white text-red-700 p-4 rounded-full text-[14px]">
+              Count :
+              <span class="text-[16px] font-semibold" id="count">0</span>
+            </button>
+          </div>
+
+          <div class="p-2" id="historyContainer"></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- You can open the modal using ID.showModal() method -->
+
+    <dialog id="viewDetailsmodal" class="modal">
+      <div class="modal-box">
+        <form method="dialog">
+          <button
+            class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+          >
+            ✕
+          </button>
+        </form>
+        <div class="max-h-[700px]" id="modalContainer">all details</div>
+      </div>
+    </dialog>
+    <div class="mx-auto max-w-7xl mt-28">
+      <p class="text-3xl font-bold px-5 mb-8">সামাজিক মাধ্যমে বিবিসি বাংলা</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 px-5 gap-8">
+        <div class="flex items-center gap-3">
+          <img
+            class="w-[70px] bg-transparent"
+            cursor-pointer
+            src="./assets/3d-render-facebook-logo-blue.jpg"
+            alt=""
+          />
+          <p class="font-bold cursor-pointer">Facebook</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <img
+            class="w-[70px] bg-transparent"
+            src="./assets/8379992.jpg"
+            alt=""
+          />
+          <p class="font-bold cursor-pointer">Linkdin</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <img
+            class="w-[70px]"
+            src="./assets/m013t0007_a_social_media_whats_app_icon_30may23.jpg"
+            alt=""
+          />
+          <p class="font-bold cursor-pointer">WhatsApp</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <img
+            class="w-[70px]"
+            src="./assets/sl_z_072523_61700_01.jpg"
+            alt=""
+          />
+          <p class="font-bold cursor-pointer">Twitter</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <img class="w-[70px]" src="./assets/v982-d3-04.jpg" alt="" />
+          <p class="font-bold cursor-pointer">Instagram</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <img
+            class="w-[70px]"
+            src="./assets/m011t0447_h_social_sign_18sep22.jpg"
+            alt=""
+          />
+          <p class="font-bold cursor-pointer">Youtube</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-auto max-w-7xl mt-28">
+      <p class="text-3xl font-bold px-5 mb-4">পাঠকপ্রিয় খবর</p>
+      <div
+        class="px-5 space-y-3 grid grid-cols-1 md:grid-cols-2 gap-3"
+        id="popularNewsContainer"
+      ></div>
+    </div>
+
     <script src="./script.js"></script>
   </body>
 </html>
